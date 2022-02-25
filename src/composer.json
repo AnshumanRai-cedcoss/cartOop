@@ -1,0 +1,7 @@
+{
+    "autuload":{
+        "psr-4":{
+            "App\\" : "classes/"
+        }
+    }
+}
