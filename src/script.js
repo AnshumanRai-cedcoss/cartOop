@@ -43,6 +43,11 @@ $("body").on("click", ".deleteBtn", function (e) {
   });
 });
 
+/**
+ * displayCart
+ * used to display the table
+ * @param {array} data
+ */
 function displayCart(data) {
   var nm = `
  <table>
@@ -53,7 +58,8 @@ function displayCart(data) {
     <th>Product Price</th>
     <th>Action</th>
   </tr>`;
-  for (let index = 0; index < data.length; index++) {
+  for (let index = 0; index < data.length; index++) 
+  {
     nm += `
       <tr>
       <td>${data[index].id}</td>

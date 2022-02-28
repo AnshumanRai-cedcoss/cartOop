@@ -1,19 +1,21 @@
 <?php
 
-namespace myApp ;
+namespace myApp;
 
 class Cart
 {
 
-  public $cartArr ;
-
+  public $cartArr;
+  /**
+   * constructor function
+   */
   public function __construct()
   {
     $this->cartArr = array();
   }
   /**
    * setCart
-   *
+   * ser cartArr as an array
    * @param [type] $arr
    * @return void
    */
@@ -23,12 +25,12 @@ class Cart
   }
   /**
    * addToCart
-   *
+   * used to add a item to the cart
    * @param [type] $produc
    * @param [type] $id
    * @return void
    */
-  public function addToCart($produc, $id)
+  public function addCart($produc, $id)
   {
 
     if (!$this->isExist($id)) {
@@ -40,10 +42,10 @@ class Cart
       }
     }
   }
-  
+
   /**
    * isExist
-   *
+   * check whether the item is already present or not
    * @param [type] $id
    * @return boolean
    */
@@ -57,40 +59,40 @@ class Cart
     }
     return false;
   }
- /**
-  * updateCart
-  *
-  * @param [type] $prod
-  * @param [type] $id
-  * @param [type] $value
-  * @return void
-  */
-  public function updateCart($prod, $id, $value)
+  /**
+   * updateCart
+   * used to edit the input field
+   * @param [type] $prod
+   * @param [type] $id
+   * @param [type] $value
+   * @return void
+   */
+  public function updateItem($product, $id, $value)
   {
-    foreach ($prod as $key => $val) {
-      if ($prod[$key]["id"] == $id) {
-        $this->cartArr[$key]["quantity"] += $value;
+    foreach ($product as $k => $val) {
+      if ($product[$k]["id"] == $id) {
+        $this->cartArr[$k]["quantity"] += $value;
       }
     }
   }
   /**
    * deleteCart
-   *
+   * used to delete the item from Cart
    * @param [type] $prod
    * @param [type] $id
    * @return void
    */
-  public function deleteCart($prod, $id)
+  public function deleteItem($product, $id)
   {
-    for ($i = 0; $i < count($prod); $i++) {
-      if ($prod[$i]["id"] == $id) {
+    for ($i = 0; $i < count($product); $i++) {
+      if ($product[$i]["id"] == $id) {
         array_splice($this->cartArr, $i, 1);
       }
     }
   }
   /**
    * getCart
-   *
+   * returns the updated cart
    * @return void
    */
   public function getCart()

@@ -18,8 +18,8 @@ class Product
   }
   /**
    * getProductArray
-   *
-   * @return void
+   * it returns the array with all the product details 
+   * @return array
    */
   public function getProductArray()
   {
